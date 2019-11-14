@@ -26,9 +26,9 @@
 
 class Solution:
     def reverse(self, x: int) -> int:
-        s = (x > 0) - (x < 0)
+        s = (x > 0) - (x < 0)  # 保证和x的符号一致
 
-        r = int(str(x * s)[::-1])
+        r = int(str(x * s)[::-1])  # 正数反转
 
         return r * s * (r < 2 ** 31)
 
@@ -36,6 +36,4 @@ class Solution:
 if __name__ == '__main__':  # True 1，False 0
 
     clazz = Solution()
-    print(clazz.reverse(210))
-
-
+    print(clazz.reverse(-210))
