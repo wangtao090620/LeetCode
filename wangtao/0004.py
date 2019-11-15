@@ -45,11 +45,14 @@ class Solution:
 
         if len1 > len2: return self.kth(num2, start2, end2, num1, start1, end1, k)
         if len1 == 0: return num2[start2 + k - 1]
+
+
         if k == 1: return min(num1[start1], num2[start2])
+
         i = start1 + min(len1, k // 2) - 1
         j = start2 + min(len2, k // 2) - 1
 
-        if num1[i] > num2[j]:
+        if num1[i] > num2[j]:  # 删除小的部分
             return self.kth(num1, start1, end1, num2, j + 1, end2, k - (j - start2 + 1))
         else:
             return self.kth(num1, i + 1, end1, num2, start2, end2, k - (i - start1 + 1))
