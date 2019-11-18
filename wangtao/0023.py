@@ -21,7 +21,8 @@
 # ]
 # 输出: 1->1->2->3->4->4->5->6
 
-import queue
+
+# 分治问题 时间复杂度 nlogk  k是链表的个数
 
 
 # Definition for singly-linked list.
