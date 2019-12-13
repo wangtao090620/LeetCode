@@ -14,4 +14,11 @@ dp = [[False] * (len(p) + 1) for _ in range(len(s) + 1)]
 
 dp = [[0 for _ in range(len(s))] for _ in range(len(s))]
 
+例如：
+
+t = [[0 for _ in range(2)] for _ in range(3)]
+
+[[0, 0], [0, 0], [0, 0]]
+
+
 ```
