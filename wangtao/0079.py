@@ -61,7 +61,7 @@ class Solution:
         return res
 """
 
-directions = [(0, -1), (-1, 0), (0, 1), (1, 0)]
+directions = [(0, -1), (-1, 0), (0, 1), (1, 0)]  # 类似还有岛屿问题
 
 
 class Solution:
