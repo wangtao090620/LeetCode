@@ -67,12 +67,12 @@ class Solution:
     def isSymmetric(self, root: TreeNode):
         if not root:
             return True
-        queue = []
+        stack = []
 
-        queue.append((root.left, root.right))
+        stack.append((root.left, root.right))
 
-        while queue:
-            l, r = queue.pop(0)
+        while stack:
+            l, r = stack.pop(0)
             if not l and not r:
                 continue
             if not l or not r:
@@ -80,8 +80,8 @@ class Solution:
 
             if l.val != r.val:
                 return False
-            queue.append((l.left, r.right))
-            queue.append((l.right, r.left))
+            stack.append((l.left, r.right))
+            stack.append((l.right, r.left))
         return True
 
 
