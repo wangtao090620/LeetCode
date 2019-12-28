@@ -33,3 +33,21 @@ t = [[0 for _ in range(2)] for _ in range(3)]
 directions = [(0, -1), (-1, 0), (0, 1), (1, 0)]
 
 ```
+
+## 链表
+
+```
+leetCode 142、148、234
+
+fast = slow = head
+# 快指正到尾部，慢指针正好在链表一半的位置
+while fast and fast.next:
+    fast = fast.next.next
+    slow = slow.next
+
+
+这个技巧适用于链表是否是回文链表，给定一个链表，返回链表开始入环的第一个节点
+
+
+
+```
