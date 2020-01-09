@@ -40,7 +40,7 @@ class Solution:
         if k >= len(prices) // 2:
             return self.maxBirnaryProfit(prices)
 
-        dp = [[[0 for _ in range(2)] for _ in range(k + 1)] for _ in range(len(prices))]
+        dp = [[[0 for _ in range(2)] for _ in range(k + 1)] for _ in range(len(prices))]  # 天数、交易次数、有无股票
         profit = float("-inf")
         for i in range(k + 1):
             dp[0][i][0], dp[0][i][1] = 0, -prices[0]
