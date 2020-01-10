@@ -37,6 +37,8 @@
 from typing import List
 
 
+# 背包问题  dp[i][j] = dp[i - 1][j] or dp[i - 1][j - nums[i]] dp[i][j]:表示第i个元素的和是j
+
 class Solution:
     def canPartition(self, nums: List[int]) -> bool:
         sumVal = sum(nums)
@@ -46,19 +48,42 @@ class Solution:
 
         target = sumVal // 2
 
-        # dp = [False for _ in range(target + 1)]
-        dp = [False] * (target + 1)
+        dp = [[False for _ in range(target + 1)] for _ in range(len(nums))]
 
-        dp[0] = True
+        if nums[0] <= target:
+            dp[0][nums[0]] = True
 
-        for num in nums:
-            for j in range(target, -1, -1):
-                if j >= num:
-                    dp[j] = dp[j] or dp[j - num]
-                else:
-                    break
-        return dp[target]
+        for i in range(1, len(nums)):
+            for j in range(target + 1):
+                dp[i][j] = dp[i - 1][j]
+                if nums[i] == j:
+                    dp[i][j] = True
+                    continue
+                if nums[i] < j:
+                    dp[i][j] = dp[i - 1][j] or dp[i - 1][j - nums[i]]
+        return dp[len(nums) - 1][target]
+
+        # 逆序 二维优化成了一维度
+        # def canPartition(self, nums: List[int]) -> bool:
+        #     sumVal = sum(nums)
+        #
+        #     if sumVal & 1 == 1:
+        #         return False
+        #
+        #     target = sumVal // 2
+        #
+        #     dp = [False] * (target + 1)
+        #
+        #     dp[0] = True
+        #
+        #     for num in nums:
+        #         for j in range(target, -1, -1):
+        #             if j >= num:
+        #                 dp[j] = dp[j] or dp[j - num]
+        #             else:
+        #                 break
+        #     return dp[target]
 
 
 if __name__ == '__main__':
-    print(Solution().canPartition([1, 5, 11, 5]))
+    print(Solution().canPartition([1, 5, 12, 5]))
