@@ -51,8 +51,8 @@ class Solution:
         return self.generateTree(1, n)
 
     def generateTree(self, start, end):
-        if start > end:
-            return [None, ]
+        if start > end:  # 若left>rightleft>right，说明为空树，返回[None][None]
+            return [None]
 
         res = []
 
