@@ -30,7 +30,7 @@
 
 # 思路：
 #
-# 方法1：递归：根 -> 左 -> 右 时间复杂度O(n),空间复杂度O(log(n))
+# 方法1：递归：左 ->根->右 时间复杂度O(n),空间复杂度O(log(n))
 # 方法2：
 
 
@@ -72,7 +72,7 @@ class Solution:
 
             node = stack.pop()
             res.append(node.val)
-            root = node.left
+            root = node.right
 
 
 if __name__ == '__main__':
