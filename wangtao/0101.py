@@ -61,31 +61,59 @@ class Solution:
                self.isMirror(t1.left, t2.right)
 """
 
+# # 栈
+# class Solution:
+#     def isSymmetric(self, root: TreeNode):
+#         if not root:
+#             return True
+#         stack = []
+#
+#         stack.append((root.left, root.right))
+#
+#         while stack:
+#             l, r = stack.pop(0)
+#             if not l and not r:
+#                 continue
+#             if not l or not r:
+#                 return False
+#
+#             if l.val != r.val:
+#                 return False
+#             stack.append((l.left, r.right))
+#             stack.append((l.right, r.left))
+#         return True
 
-# 栈
+from collections import deque
+
+
 class Solution:
     def isSymmetric(self, root: TreeNode):
         if not root:
             return True
-        stack = []
+        d = deque()
+        d.append((root, root))
+        while root and d:
+            p, q = d.popleft()
 
-        stack.append((root.left, root.right))
-
-        while stack:
-            l, r = stack.pop(0)
-            if not l and not r:
-                continue
-            if not l or not r:
+            if not self.check(p, q):
                 return False
 
-            if l.val != r.val:
-                return False
-            stack.append((l.left, r.right))
-            stack.append((l.right, r.left))
+            if p:
+                d.append((p.left, q.right))
+                d.append((p.right, q.left))
         return True
 
+    def check(self, p, q):
+        if not p and not q:
+            return True
+        if not p or not q:
+            return False
 
-if __name__ == '__main__':
-    queue = []
+        if p.val == q.val:
+            return True
+        return False
 
-    queue.append((1, 2))
+    if __name__ == '__main__':
+        queue = []
+
+        queue.append((1, 2))
