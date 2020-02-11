@@ -8,7 +8,16 @@
 
 # @Time    :   2019-12-05 08:44
 
+from collections import deque
 
 if __name__ == '__main__':
 
-    pass
+    d = deque()
+    d.append(1)
+    d.append(2)
+    d.append(3)
+
+
+    print(d)
+
+    print(d.popleft())
