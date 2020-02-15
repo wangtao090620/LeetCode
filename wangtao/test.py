@@ -21,3 +21,12 @@ if __name__ == '__main__':
     print(d)
 
     print(d.popleft())
+
+    l = [2,3,4,10,9]
+
+    print(l.pop())
+
+    # l.extend([3])
+    # print(l)
+
+    print(l[2:-1])
