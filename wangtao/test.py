@@ -30,3 +30,5 @@ if __name__ == '__main__':
     # print(l)
 
     print(l[2:-1])
+
+    print(l[0:2])
