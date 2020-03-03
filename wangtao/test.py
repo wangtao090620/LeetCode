@@ -20,11 +20,13 @@ if __name__ == '__main__':
 
     print(d)
 
-    print(d.popleft())
+    print(d.pop())
 
     l = [2,3,4,10,9]
 
-    print(l.pop())
+    l.append(12)
+
+    print(l.pop(0))
 
     # l.extend([3])
     # print(l)
@@ -32,3 +34,10 @@ if __name__ == '__main__':
     print(l[2:-1])
 
     print(l[0:2])
+
+
+    a = set()
+
+    a.add(3)
+
+    print(3 in a)
