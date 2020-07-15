@@ -9,13 +9,13 @@
 # @Time    :   2020-07-14 22:53
 
 
-'''
+"""
 
 两数之和，考察hash值
 
 hash k：值 value：脚标
 
-'''
+"""
 from typing import List
 
 
