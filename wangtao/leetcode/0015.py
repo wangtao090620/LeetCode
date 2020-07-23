@@ -50,7 +50,7 @@ if __name__ == '__main__':
 
     a = [1, 2, 3, 4]
 
-    print(3 in m)
+
 
     for i, v in enumerate(a[:-2]):
         print(i)
