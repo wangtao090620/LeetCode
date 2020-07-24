@@ -15,17 +15,17 @@ class Solution:
         nums.sort()
         res = float("inf")
         for k in range(len(nums) - 1):
-            if k > 0 and nums[k] == nums[k - 1]: continue
+            if k > 0 and nums[k] == nums[k - 1]: continue  # 跳过相同元素
             i, j = k + 1, len(nums) - 1
             while i < j:
                 s = nums[k] + nums[i] + nums[j]
                 if s == target:
                     return target
-                if abs(s - target) < abs(res - target):
+                if abs(s - target) < abs(res - target):  # 赋值最小的
                     res = s
-                if s - target < 0:
+                if s - target < 0:  # 值在右边
                     i += 1
-                else:
+                else:  # 值在左边
                     j -= 1
         return res
 

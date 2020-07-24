@@ -23,10 +23,10 @@ class Solution:
 
         while i < j:
             if height[i] < height[j]:
-                res = max(res, height[i] * height[j - 1])
+                res = max(res, height[i] * (j - i))
                 i += 1
             else:
-                res = max(res, height[j] * height[j - 1])
+                res = max(res, height[j] * (j - i))
                 j -= 1
         return res
 
