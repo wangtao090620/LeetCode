@@ -30,7 +30,7 @@ n = 3,k = 3
 
 class Solution:
     def getPermutation(self, n: int, k: int) -> str:
-        num = [str(i) for i in range(1, n + 1)]
+        num = [str(i) for i in range(1, n + 1)]  # [1, n]
         res = ""
         n -= 1  # 每个不同的数开头，有(n-1)!种排列
         while n > -1:
